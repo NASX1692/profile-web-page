@@ -1,0 +1,36 @@
+{
+    "experience": [
+        {
+            "company": "Gosoft (Thailand) Co.",
+            "position": "Full-Stack Developer (OUTSOURCE)",
+            "date": "Mar 2022 - Present",
+            "contents": [
+                "Refactor ERP system for manage product for warehouse to the new design",
+                "Implemented UI interface for website  using React TypeScript",
+                "Implement back-end using Express TypeScript and using Radis for cash"
+            ]
+        },
+        {
+            "company": "Streamsouth Tech",
+            "position": "Full-Stack Developer",
+            "date": "Jul 2021 - Feb 2022",
+            "contents": [
+                "Implemented back-end for E-learning website using Express JS, GraphQL and Mongo DB",
+                "Implemented UI interface for REED Project using Next JS",
+                "Implement back-end for AR Project using Express JS, GraphQL and Mongo DB",
+                "Desing and Implemented UX/UI E-learning website using ReactJS and Chakra UI",
+                "Customized Odoo module configured Zoom integration service"
+            ]
+        },
+        {
+            "company": "I-net (Hatyai Center)",
+            "position": "Internship",
+            "date": "Dec 2020 - Mar 2021",
+            "contents": [
+                "Implemented payment UI for onechat application using Vue js",
+                "Implemented UI interface for REED Project using Next JS",
+                "Implemented API for yimyam website using Java Spring Boot and MySQL Server",
+            ]
+        }
+    ]
+}
