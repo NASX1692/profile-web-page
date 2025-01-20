@@ -1,52 +1,71 @@
 import { animated, useSpring } from '@react-spring/web';
 import colorPalettes from '../../color-palettes';
+import { useCallback, useEffect, useState } from 'react';
+
 export interface IButton {
   name?: string;
   display: string;
-
-  action?: string;
-  onSelectAction?: (actionName: string | undefined) => void;
+  activeId?: string;
+  onSelectAction?: (sectionId: string) => void;
 }
 
 const ActionButton = ({
   name = '',
   display,
-}: //   onSelectAction,
-IButton) => {
+  activeId,
+  onSelectAction,
+}: IButton) => {
+  const [active, setActive] = useState<boolean>(false);
   const [springs, setSprings] = useSpring(() => ({
-    // y: 100,
     x: 0,
-    color: '#ffff',
+    color: colorPalettes.light,
     transform: `translateX(0px)`,
     opacity: 0.7,
   }));
 
-  const onHover = (isHover: boolean) => {
+  const styleChecker = (isActive: boolean) => {
     setSprings({
-      opacity: isHover ? 10 : 0.7,
-      transform: isHover ? `translateX(30px)` : `translateX(0px)`,
+      opacity: isActive ? 10 : 0.7,
+      transform: isActive ? `translateX(30px)` : `translateX(0px)`,
       delay: 100,
-      color: isHover ? colorPalettes.onSelect : '#ffff',
+      color: isActive ? colorPalettes.content : colorPalettes.content,
     });
   };
 
-  //   const handleGetAction = useCallback(
-  //     (actionName: string | undefined) => {
-  //       onSelectAction(actionName);
-  //     },
-  //     [],
-  //   );
+  const handleGetAction = useCallback(
+    (actionName: string | undefined) => {
+      if (actionName && onSelectAction) {
+        onSelectAction(actionName);
+      }
+    },
+    [onSelectAction],
+  );
+
+  useEffect(() => {
+    if (active) {
+      styleChecker(true);
+    } else {
+      styleChecker(false);
+    }
+  }, [active]);
+
+  useEffect(() => {
+    if (activeId === name) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [activeId]);
 
   return (
     <animated.div style={springs}>
       <button
         onClick={() => {
-          //   handleGetAction(name);
+          handleGetAction(name);
         }}
-        onMouseOver={() => onHover(true)}
-        onMouseLeave={() => onHover(false)}
-        id={name}
-        className="flex w-[200px] justify-center"
+        onMouseOver={() => styleChecker(true)}
+        onMouseLeave={() => styleChecker(false)}
+        className="flex justify-center border-0	m-0	p-0 bg-transparent cursor-pointer "
       >
         {display}
       </button>

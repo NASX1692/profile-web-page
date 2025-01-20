@@ -1,67 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  body {
+    margin: '0px';
+    padding: '0px';
+    display: block;
+    place-items: center;
+    /* min-width: '320px';
+    min-height: 100vh; */
+    background: theme(colors.background);
 
-:root {
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	display: block;
-	/* font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; */
-}
-
-a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: inherit;
-}
-a:hover {
-	color: #535bf2;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: '100vh';
+    color: theme(colors.gray.400);
+  }
 }
 
-body {
-	margin: '500px';
-	display: block;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+@font-face {
+  font-family: 'Digital-7';
+  src: url('./fonts/digital-7.ttf');
 }
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #082032;
 }
-button:hover {
-	border-color: #ffffff;
-}
-/* button:focus, */
-/* button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-} */
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: #ffffff;
-	}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
 }
