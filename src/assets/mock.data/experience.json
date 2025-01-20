@@ -1,0 +1,52 @@
+{
+    "jobs": [
+        {
+            "companyName": "Gosoft (Thailand)",
+            "position": "Full-Stack",
+            "date": "Mar 2022 - Present",
+            "techs": [
+                "React TS",
+                "Express TS",
+                "Node"
+            ],
+            "jobDetails": [
+                "Refactor new design ERP system for warehouse management.",
+                "Implemented UI for website using React TypeScript.",
+                "Implemented back-end using node Express TypeScript."
+            ]
+        },
+        {
+            "companyName": "Streamsouth Tech",
+            "position": "Full-Stack",
+            "date": "Jul 2021 - Feb 2022",
+            "techs": [
+                "React JS & TS",
+                "Express TS",
+                "Node",
+                "GraphQL",
+                "Odoo",
+                "MongoDB"
+            ],
+            "jobDetails": [
+                "Implemented back-end for E-learning website using Express JS and GraphQL.",
+                "Implemented and custom component UI for REED Project using Next JS.",
+                "Implemented back-end for AR Project using Express TypeScript and GraphQL.",
+                "Designed and Implemented UX/UI E-learning website using ReactJS and Chakra UI.",
+                "Customized an Odoo module by integrating Zoom services."
+            ]
+        },
+        {
+            "companyName": "I-net (Hatyai Center)",
+            "position": "Internship",
+            "date": "Dec 2020 - Mar 2021",
+            "techs": [
+                "Srping Boot",
+                "Vue"
+            ],
+            "jobDetails": [
+                "Implemented payment UI for project onechat application using Vue js.",
+                "Implemented API for yimyam website using Java Spring Boot and MySQL Server."
+            ]
+        }
+    ]
+}

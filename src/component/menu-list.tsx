@@ -1,32 +1,32 @@
-import { IMenu, Menu } from '../interface/action-menu';
+import { ListMenu } from '../constant';
 import ActionButton from './action-button';
-interface props {
-  action?: string;
-  onSelectAction?: (actionName: string | undefined) => void;
-}
+import useScrollSpy from './useScroll';
 
-const MenuList = ({ onSelectAction, action }: props) => {
-  const ListMenu: IMenu[] = [
-    { name: Menu.ABOUT, display: 'About' },
-    { name: Menu.EDUCATION, display: 'Education' },
-    { name: Menu.WORK_EXPERIENCE, display: 'Work Experience' },
-    { name: Menu.CONTACT, display: 'Contact' },
+const MenuList = () => {
+  const sections = [
+    'about-section',
+    'experience-section',
+    'education-section',
   ];
+  const onSelectSection = (sectionId: string) => {
+    const element = document?.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
+  const activeId = useScrollSpy(sections, 240);
   return (
-    <>
-      <span className="flex flex-col text-xl mt-10 ">Menu</span>
-      <div className="flex flex-col gap-1 mt-2 absolute ">
-        {ListMenu.map((item) => (
-          <ActionButton
-            name={item.name}
-            display={item.display}
-            onSelectAction={onSelectAction}
-            action={action}
-          />
-        ))}
-      </div>
-    </>
+    <div className="text-lg gap-3 mt-5 sm:hidden md:hidden lg:flex flex-col">
+      {ListMenu.map((item) => (
+        <ActionButton
+          name={item.sectionId}
+          display={item.tital}
+          onSelectAction={onSelectSection}
+          activeId={activeId}
+        />
+      ))}
+    </div>
   );
 };
 
